@@ -19,7 +19,8 @@ const middleware = (req, res, next) => {
   console.log('Hello From Middleware.');
 
   //Setting up user variable globally
-  req.user = 'Craig Nelson'
+ // req.user = 'Craig Nelson'
+ req.requestMethod = req.url;
   next();
 }
 app.use(middleware);
